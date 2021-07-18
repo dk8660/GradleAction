@@ -23,3 +23,9 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: action-slack
+      uses: 8a7/action-slack@v2.6.0
+      with:
+        status: ${{job.status}}
+        author_name: test
+      env:
